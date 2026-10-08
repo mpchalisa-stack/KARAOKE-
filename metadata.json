@@ -1,0 +1,8 @@
+{
+  "name": "Rem Diskomlekau Karaoke Master - Pencarian \u0026 Antrean Lagu",
+  "description": "Aplikasi karaoke web modern dengan pencarian YouTube otomatis (filter karaoke/no vocal), pemutar YouTube IFrame otomatis, antrean cerdas (queue), remote control prep, dan efek suara pesta.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

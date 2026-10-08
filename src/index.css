@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* Force Dark Mode across all devices, mobile browsers, and Smart TVs */
+:root {
+  color-scheme: dark !important;
+  --color-scheme: dark !important;
+  background-color: #060e20 !important;
+  background: #060e20 !important;
+  color: #f8fafc !important;
+}
+
+html {
+  color-scheme: dark !important;
+  background-color: #060e20 !important;
+  background: #060e20 !important;
+  color: #f8fafc !important;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color-scheme: dark !important;
+  background-color: #060e20 !important;
+  background: #060e20 !important;
+  color: #f8fafc !important;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.15), transparent),
+    linear-gradient(to bottom, rgba(6, 14, 32, 0.95), rgba(4, 9, 20, 0.98)),
+    radial-gradient(#0284c7 0.75px, transparent 0.75px);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #060e20 !important;
+  color: #f8fafc !important;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(7, 18, 44, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.75);
+}
+
+@keyframes pulseRadar {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.35), 0 0 30px rgba(2, 132, 199, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.65), 0 0 45px rgba(14, 165, 233, 0.4);
+  }
+}
+
+.glow-tni {
+  animation: pulseRadar 3s infinite ease-in-out;
+}
+
+/* Tactical HUD corner accents */
+.hud-corner {
+  position: relative;
+}
+.hud-corner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #38bdf8;
+  border-left: 2px solid #38bdf8;
+  pointer-events: none;
+}
+.hud-corner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #38bdf8;
+  border-right: 2px solid #38bdf8;
+  pointer-events: none;
+}
+
+/* TV Fullscreen cursor hide & Smart TV Tizen scrollbar suppression */
+html.tv-mode-active,
+body.tv-mode-active {
+  overflow: hidden !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  cursor: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+html.tv-mode-active *,
+body.tv-mode-active * {
+  cursor: none !important;
+}
+
+.tv-fullscreen-mode {
+  overflow: hidden !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  cursor: none !important;
+}
+
+.tv-fullscreen-mode * {
+  cursor: none !important;
+}
+
+/* Smooth continuous marquee ticker for TV */
+@keyframes marqueeSmooth {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-tv {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marqueeSmooth 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-tv:hover {
+  animation-play-state: paused;
+}
+
+/* Red text with crisp white outline for TV Master Title */
+.title-red-white-stroke {
+  color: #dc2626 !important; /* Bold Crimson Red */
+  -webkit-text-stroke: 1.5px #ffffff;
+  text-stroke: 1.5px #ffffff;
+  paint-order: stroke fill;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 20px rgba(239, 68, 68, 0.8),
+    0 2px 4px rgba(0, 0, 0, 0.95);
+}
+
+@media (min-width: 768px) {
+  .title-red-white-stroke {
+    -webkit-text-stroke: 2px #ffffff;
+    text-stroke: 2px #ffffff;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title-red-white-stroke {
+    -webkit-text-stroke: 2.5px #ffffff;
+    text-stroke: 2.5px #ffffff;
+  }
+}
+
+@media (min-width: 1280px) {
+  .title-red-white-stroke {
+    -webkit-text-stroke: 3px #ffffff;
+    text-stroke: 3px #ffffff;
+  }
+}

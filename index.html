@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id" class="dark" style="color-scheme: dark; background-color: #060e20; color: #f8fafc;">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Runtime constraint: HMR is disabled in AI Studio. Ignore WebSocket & Vite HMR errors.
+      (function() {
+        var origConsoleError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var msg = args.map(function(a) {
+            return (a && a.message) ? a.message : String(a);
+          }).join(' ');
+          if (msg.indexOf('WebSocket') !== -1 || msg.indexOf('@vite/client') !== -1 || msg.indexOf('[vite]') !== -1 || msg.indexOf('Lost connection to server') !== -1 || msg.indexOf('PeerJS') !== -1) {
+            return;
+          }
+          return origConsoleError.apply(console, args);
+        };
+        window.addEventListener('error', function(e) {
+          var msg = (e && e.message) ? e.message : '';
+          if (msg.indexOf('WebSocket') !== -1 || msg.indexOf('@vite/client') !== -1 || msg.indexOf('[vite]') !== -1 || msg.indexOf('Lost connection to server') !== -1 || msg.indexOf('PeerJS') !== -1) {
+            e.preventDefault();
+            e.stopPropagation();
+            return true;
+          }
+        }, true);
+        window.addEventListener('unhandledrejection', function(e) {
+          var reason = (e && e.reason) ? ((e.reason.message) || String(e.reason)) : '';
+          if (reason.indexOf('WebSocket') !== -1 || reason.indexOf('@vite/client') !== -1 || reason.indexOf('[vite]') !== -1 || reason.indexOf('Lost connection to server') !== -1 || reason.indexOf('PeerJS') !== -1) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }, true);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="color-scheme" content="dark" />
+    <title>tes Diskomlekau Karaoke Master - Pencarian &amp; Antrean Lagu</title>
+    <meta name="description" content="Aplikasi karaoke web modern dengan pencarian YouTube otomatis (filter karaoke/no vocal), pemutar YouTube IFrame otomatis, antrean cerdas (queue), remote control prep, dan efek suara pesta." />
+    <meta property="og:title" content="tes Diskomlekau Karaoke Master - Pencarian &amp; Antrean Lagu" />
+    <meta property="og:description" content="Aplikasi karaoke web modern dengan pencarian YouTube otomatis (filter karaoke/no vocal), pemutar YouTube IFrame otomatis, antrean cerdas (queue), remote control prep, dan efek suara pesta." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#07132c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Karaoke TNI AU" />
+    <meta name="application-name" content="Karaoke Diskomlekau" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/pwa-512x512.png" />
+    <script src="/registerSW.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body style="color-scheme: dark; background-color: #060e20; color: #f8fafc;" class="bg-[#060e20] text-slate-100 antialiased selection:bg-sky-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

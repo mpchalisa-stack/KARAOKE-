@@ -1,0 +1,49 @@
+{
+  "id": "/",
+  "name": "Karaoke Diskomlekau TNI AU",
+  "short_name": "Karaoke AU",
+  "description": "Prajurit Yang Pantang Mundur Walau Suara Hancur - Aplikasi Karaoke Web, HP Android, iOS, dan Smart TV",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#060e20",
+  "theme_color": "#07132c",
+  "categories": ["entertainment", "music"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Remote HP / Cari Lagu",
+      "short_name": "Remote HP",
+      "description": "Buka pengendali dan pencari lagu di smartphone",
+      "url": "/?mode=client",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Layar Puskodal Smart TV",
+      "short_name": "Layar TV",
+      "description": "Buka tampilan panggung proyektor / Smart TV layar penuh",
+      "url": "/?mode=tv",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

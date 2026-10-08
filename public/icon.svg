@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1b3d"/>
+      <stop offset="50%" stop-color="#061229"/>
+      <stop offset="100%" stop-color="#030814"/>
+    </linearGradient>
+
+    <!-- Lightning Bolt Gradient: Brilliant Golden-Yellow with Solar Core -->
+    <linearGradient id="lightningGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="25%" stop-color="#fde047"/>
+      <stop offset="65%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+
+    <!-- Microphone Body Gradient: Futuristic Cyber Cyan -->
+    <linearGradient id="micBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="35%" stop-color="#38bdf8"/>
+      <stop offset="70%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+
+    <!-- Microphone Grille Mesh Gradient -->
+    <linearGradient id="grilleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="40%" stop-color="#94a3b8"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+
+    <!-- Radar / Soundwave Glow -->
+    <radialGradient id="electricGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#0284c7" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Filter Glow for Lightning & Mic -->
+    <filter id="boltGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="micGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Squircle App Base -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" stroke="#38bdf8" stroke-width="8"/>
+
+  <!-- Radial Cyber Halo -->
+  <circle cx="256" cy="240" r="190" fill="url(#electricGlow)"/>
+
+  <!-- Tactical Radar Rings -->
+  <circle cx="256" cy="240" r="185" fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.25"/>
+  <circle cx="256" cy="240" r="140" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-opacity="0.35" stroke-dasharray="6 6"/>
+  <circle cx="256" cy="240" r="95" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-opacity="0.4"/>
+
+  <!-- Audio Waves radiating from left & right -->
+  <!-- Left sound waves -->
+  <path d="M 125,190 A 65,65 0 0,0 125,290" fill="none" stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-opacity="0.6"/>
+  <path d="M 95,160 A 105,105 0 0,0 95,320" fill="none" stroke="#38bdf8" stroke-width="4" stroke-linecap="round" stroke-opacity="0.35"/>
+  <!-- Right sound waves -->
+  <path d="M 387,190 A 65,65 0 0,1 387,290" fill="none" stroke="#facc15" stroke-width="5" stroke-linecap="round" stroke-opacity="0.6"/>
+  <path d="M 417,160 A 105,105 0 0,1 417,320" fill="none" stroke="#facc15" stroke-width="4" stroke-linecap="round" stroke-opacity="0.35"/>
+
+  <!-- ===== PROFESSIONAL STUDIO MICROPHONE (CENTER) ===== -->
+  <g transform="translate(20, 0)">
+    <!-- Mic Stand U-Mount & Base -->
+    <path d="M 186,225 C 186,305 286,305 286,225" fill="none" stroke="#94a3b8" stroke-width="8" stroke-linecap="round"/>
+    <line x1="236" y1="298" x2="236" y2="340" stroke="#94a3b8" stroke-width="8" stroke-linecap="round"/>
+    <line x1="206" y1="340" x2="266" y2="340" stroke="#94a3b8" stroke-width="9" stroke-linecap="round"/>
+
+    <!-- Mic Capsule / Grille Top (Dome) -->
+    <path d="M 206,165 C 206,128 266,128 266,165 Z" fill="url(#grilleGrad)" stroke="#e2e8f0" stroke-width="3" filter="url(#micGlow)"/>
+    
+    <!-- Mic Grille Middle Section -->
+    <rect x="206" y="165" width="60" height="50" rx="4" fill="url(#grilleGrad)" stroke="#cbd5e1" stroke-width="2"/>
+    <!-- Mic Mesh Pattern Lines -->
+    <line x1="206" y1="178" x2="266" y2="178" stroke="#334155" stroke-width="2"/>
+    <line x1="206" y1="192" x2="266" y2="192" stroke="#334155" stroke-width="2"/>
+    <line x1="206" y1="204" x2="266" y2="204" stroke="#334155" stroke-width="2"/>
+    <line x1="222" y1="140" x2="222" y2="215" stroke="#334155" stroke-width="2"/>
+    <line x1="236" y1="130" x2="236" y2="215" stroke="#334155" stroke-width="2"/>
+    <line x1="250" y1="140" x2="250" y2="215" stroke="#334155" stroke-width="2"/>
+
+    <!-- Metallic Collar Ring -->
+    <rect x="202" y="215" width="68" height="8" rx="3" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+
+    <!-- Mic Solid Body (Cyber Handle) -->
+    <path d="M 210,223 L 214,275 C 214,282 258,282 258,275 L 262,223 Z" fill="url(#micBodyGrad)" stroke="#38bdf8" stroke-width="3"/>
+    <!-- Mic Status LED Indicator -->
+    <circle cx="236" cy="245" r="4" fill="#10b981" stroke="#a7f3d0" stroke-width="1.5"/>
+  </g>
+
+  <!-- ===== DYNAMIC ELECTRIC LIGHTNING BOLT (PETIR) ===== -->
+  <!-- Bold, high-energy lightning cutting across dynamically -->
+  <g filter="url(#boltGlow)">
+    <!-- Outer energy stroke for lightning glow -->
+    <polygon points="
+      275,60
+      175,225
+      235,225
+      165,375
+      325,195
+      260,195
+      330,60
+    " fill="none" stroke="#fef08a" stroke-width="6" stroke-linejoin="round"/>
+
+    <!-- Main Solid Lightning Bolt -->
+    <polygon points="
+      275,60
+      175,225
+      235,225
+      165,375
+      325,195
+      260,195
+      330,60
+    " fill="url(#lightningGrad)" stroke="#fef9c3" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- Electric Spark accents -->
+    <!-- Small spark top-right -->
+    <polygon points="345,100 355,115 368,118 357,126 358,138 347,130 336,136 340,123 331,114 344,113" fill="#fde047"/>
+    <!-- Small spark bottom-left -->
+    <polygon points="145,340 152,352 163,354 154,361 155,371 146,364 137,369 140,358 132,351 143,350" fill="#38bdf8"/>
+  </g>
+
+  <!-- Bottom Tactical Banner: DISKOMLEKAU MIC -->
+  <rect x="76" y="398" width="360" height="64" rx="16" fill="#071838" stroke="#38bdf8" stroke-width="3"/>
+  <!-- Decorative corner bolts -->
+  <circle cx="92" cy="430" r="4" fill="#38bdf8"/>
+  <circle cx="420" cy="430" r="4" fill="#facc15"/>
+
+  <text x="256" y="432" font-family="'Outfit', Arial, sans-serif" font-weight="900" font-size="24" fill="#ffffff" text-anchor="middle" letter-spacing="3">
+    DISKOMLEK<tspan fill="#38bdf8">AU</tspan>
+  </text>
+  <text x="256" y="452" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#facc15" text-anchor="middle" letter-spacing="2">
+    ⚡ PETIR &amp; MIC WIRELESS 🎤
+  </text>
+</svg>
